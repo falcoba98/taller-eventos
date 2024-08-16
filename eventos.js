@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let button = document.getElementById("button");
+    let buttonDiv = document.getElementById("button");
+    let button = buttonDiv.querySelector("button");
 
-    button.addEventListener('click', function() {
+
+    buttonDiv.addEventListener('click', function() {
         alert('Hola! Soy el div');
+    });
+
+
+    button.addEventListener('click', function(eventoboton) {
+        eventoboton.stopPropagation();
+        alert('Hola! Soy el botón');
     });
 });
